@@ -2,7 +2,7 @@
 #chmod 600 ~/keyfile.pem
 #ssh -i ~/keyfile.pem ubuntu@<public_ipv4_address>
 
-ssh -i ~/aws-shell-key-value.pem ubuntu@3.107.179.224
+ssh -i ~/aws-shell-key-value.pem ubuntu@<your-public-ipv4-address>
 aws configure
 vim ws-resource-tracker.sh
 #!/bin/bash
