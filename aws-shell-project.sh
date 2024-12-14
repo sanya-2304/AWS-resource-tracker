@@ -39,3 +39,14 @@ chmod 777 ws-resource-tracker.sh
 
 # The InstanceId is inside the Instances array, which is within the Reservations array. Use the following jq command to retrieve all InstanceId values:
  aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+
+
+# Here is how to integrate the modified script with a cron job :: 
+# 1. Open the crontab configuration by running:
+# crontab -e
+# 2. Add the following line to the crontab file:
+# 0 20 * * * /path to your script.sh 
+# (Replace /path to script.sh with the actual path of your script)
+# The cron job entry 0 20 * * * specifies that the script will run at 20:00 (8:00 PM) every day.
+# 3. Save and exit the crontab editor.  
