@@ -27,3 +27,8 @@ aws iam list-users
 chmod 777 ws-resource-tracker.sh 
 
 ./aws-resource-tracker.sh | more
+
+#The correct jq command to extract specific information from the aws ec2 describe-instances output depends on the structure of the JSON data you're working with.
+
+# The InstanceId is inside the Instances array, which is within the Reservations array. Use the following jq command to retrieve all InstanceId values:
+ aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
